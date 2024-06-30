@@ -13,7 +13,12 @@ import voluptuous as vol
 import wakeonlan
 
 # Adding all of the potential options for now, should trim down or implement
-from homeassistant.components.media_player import PLATFORM_SCHEMA, MediaPlayerEntity
+from homeassistant.components.media_player import (
+    PLATFORM_SCHEMA, 
+    MediaPlayerEntity,
+    MediaPlayerEntityFeature,
+)
+
 from homeassistant.components.media_player.const import (
     SUPPORT_NEXT_TRACK,
     SUPPORT_PAUSE,
@@ -75,13 +80,13 @@ DEFAULT_TIMEOUT = 1.0
 
 # Set core supported media_player functions
 SUPPORT_MYTHTV_FRONTEND = (
-    SUPPORT_PAUSE
-    | SUPPORT_PREVIOUS_TRACK
-    | SUPPORT_NEXT_TRACK
-    | SUPPORT_PLAY
-    | SUPPORT_STOP
-    | SUPPORT_SEEK
-    | SUPPORT_TURN_OFF
+    MediaPlayerEntityFeature.PAUSE
+    | MediaPlayerEntityFeature.PREVIOUS_TRACK
+    | MediaPlayerEntityFeature.NEXT_TRACK
+    | MediaPlayerEntityFeature.PLAY
+    | MediaPlayerEntityFeature.STOP
+    | MediaPlayerEntityFeature.SEEK
+    | MediaPlayerEntityFeature.TURN_OFF
 )
 
 # Set supported media_player functions when volume_control is enabled
