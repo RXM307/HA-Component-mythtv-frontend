@@ -1,0 +1,5 @@
+{
+  "name": "mythtv",
+  "render_readme": false,
+  "homeassistant": "0.90.0"
+}
