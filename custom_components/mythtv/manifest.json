@@ -1,14 +1,12 @@
 {
   "domain": "mythtv",
   "name": "Mythtv",
-  "documentation": "https://github.com/calmor15014/HA-Component-mythtv-frontend",
+  "documentation": "https://github.com/RXM307/HA-Component-mythtv-frontend",
   "requirements": [
     "wakeonlan==1.1.6"
   ],
   "dependencies": [],
   "codeowners": ["@calmor15014",
-	  	 "@RXM307"
-  ],
-  "version": "0.0.2",
-  "homeassistant": "0.90.0"
+  		 "@RXM307"],
+  "version": "0.0.2"
 }

@@ -19,7 +19,7 @@ from homeassistant.components.media_player import (
     MediaPlayerEntityFeature,
 )
 
-from homeassistant.components.media_player.const import (
+"""from homeassistant.components.media_player.const import (
     SUPPORT_NEXT_TRACK,
     SUPPORT_PAUSE,
     SUPPORT_PLAY,
@@ -31,7 +31,7 @@ from homeassistant.components.media_player.const import (
     SUPPORT_VOLUME_MUTE,
     SUPPORT_VOLUME_SET,
     SUPPORT_VOLUME_STEP,
-)
+)"""
 from homeassistant.const import (
     CONF_HOST,
     CONF_MAC,
@@ -90,7 +90,7 @@ SUPPORT_MYTHTV_FRONTEND = (
 )
 
 # Set supported media_player functions when volume_control is enabled
-SUPPORT_VOLUME_CONTROL = SUPPORT_VOLUME_STEP | SUPPORT_VOLUME_MUTE | SUPPORT_VOLUME_SET
+SUPPORT_VOLUME_CONTROL = MediaPlayerEntityFeature.VOLUME_STEP | MediaPlayerEntityFeature.VOLUME_MUTE | MediaPlayerEntityFeature.VOLUME_SET
 
 # Set up YAML schema
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
@@ -362,7 +362,7 @@ class MythTVFrontendEntity(MediaPlayerEntity):
         features = SUPPORT_MYTHTV_FRONTEND
         if self._mac:
             # Add WOL feature
-            features |= SUPPORT_TURN_ON
+            features |= MediaPlayerEntityFeature.TURN_ON
         if self._volume["control"]:
             features |= SUPPORT_VOLUME_CONTROL
         return features
